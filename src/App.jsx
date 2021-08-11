@@ -6,13 +6,18 @@ import UserContext from './context/UserContext';
 class App extends Component {
   state = {
     user: {
-      userName: 'Bob',
+      name: 'Bob',
       age: 41,
     },
   };
+  handleLogIn = (username) => {
+    console.log('handlelolz', username);
+  };
   render() {
     return (
-      <UserContext.Provider value={this.state.user}>
+      <UserContext.Provider
+        value={{ user: this.state.user, onLogin: this.handleLogIn }}
+      >
         <div className="App">
           <MoviePage />
         </div>

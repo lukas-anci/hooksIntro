@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MovieRow from './MovieRow';
 import UserContext from './UserContext';
 class MovieList extends Component {
   // pridedam contexta kad butu pasiekiamas visoje klaseje(2 budas)
@@ -14,9 +15,10 @@ class MovieList extends Component {
           <div>
             <h4>Movie List</h4>
             <p>
-              {userValue.userName} likes this movie list and he is{' '}
-              {userValue.age} years old
+              {userValue.user.name} likes this movie list and he is{' '}
+              {userValue.user.age} years old
             </p>
+            <MovieRow />
           </div>
         )}
       </UserContext.Consumer>
