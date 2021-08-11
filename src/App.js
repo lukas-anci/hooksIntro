@@ -1,11 +1,11 @@
 import './App.css';
-import CounterHook from './components/CounterHook';
+import MoviePage from './context/MoviePage';
+// import CounterHook from './components/CounterHook';
 
 function App() {
   return (
     <div className="App">
-      {/* <Counter /> */}
-      <CounterHook />
+      <MoviePage />
     </div>
   );
 }
