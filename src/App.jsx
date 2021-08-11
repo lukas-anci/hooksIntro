@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component } from 'react';
 import MoviePage from './context/MoviePage';
 import UserContext from './context/UserContext';
+import Login from './context/Login';
 
 class App extends Component {
   state = {
@@ -12,6 +13,7 @@ class App extends Component {
   };
   handleLogIn = (username) => {
     console.log('handlelolz', username);
+    this.setState({ user: { ...this.state.user, name: username } });
   };
   render() {
     return (
@@ -20,6 +22,7 @@ class App extends Component {
       >
         <div className="App">
           <MoviePage />
+          <Login />
         </div>
       </UserContext.Provider>
     );
