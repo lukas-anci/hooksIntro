@@ -1,12 +1,18 @@
 import React, { useReducer } from 'react';
 
+const ACTION = {
+  INCREMENT: 'increment',
+  DECREMENT: 'decrement',
+  RESET: 'reset',
+};
+
 function countReducer(state, action) {
   switch (action.type) {
-    case 'increment':
+    case ACTION.INCREMENT:
       return { count: state.count + 1 };
-    case 'decrement':
+    case ACTION.DECREMENT:
       return { count: state.count - 1 };
-    case 'reset':
+    case ACTION.RESET:
       return { count: 0 };
 
     default:
@@ -20,13 +26,13 @@ export default function ReducerCounter() {
   const [state, dispatch] = useReducer(countReducer, { count: 0 });
 
   function increment() {
-    dispatch({ type: 'increment' });
+    dispatch({ type: ACTION.INCREMENT });
   }
   function decrement() {
-    dispatch({ type: 'decrement' });
+    dispatch({ type: ACTION.DECREMENT });
   }
   function reset() {
-    dispatch({ type: 'reset' });
+    dispatch({ type: ACTION.RESET });
   }
 
   return (
