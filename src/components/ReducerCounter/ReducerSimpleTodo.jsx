@@ -1,8 +1,9 @@
 import React, { useReducer, useState } from 'react';
 import RTodo from './RTodo';
 
-const ACTION = {
+export const ACTION = {
   ADD_TODO: 'add-todo',
+  TOGGLE_TODO: 'toggle-todo',
 };
 
 function todoReducer(todosArr, action) {
@@ -50,7 +51,7 @@ export default function ReducerSimpleTodo() {
       <h4>List</h4>
       <ul>
         {todosArr.map((t) => (
-          <RTodo item={t} key={t.id} />
+          <RTodo item={t} key={t.id} dispatch={dispatch} />
         ))}
       </ul>
     </>
