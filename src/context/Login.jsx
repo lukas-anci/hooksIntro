@@ -7,6 +7,7 @@ export default function Login() {
   return (
     <div>
       <button onClick={() => userContext.onLogin('James')}>Login</button>
+      <button onClick={() => userContext.onLogin('Lol')}>Login Lol</button>
     </div>
   );
 }
